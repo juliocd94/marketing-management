@@ -1,6 +1,7 @@
 import './bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdb-vue-ui-kit/css/mdb.min.css';
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';

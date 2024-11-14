@@ -1,10 +1,11 @@
 <script setup>
+import { Link } from "@inertiajs/vue3";
+
 </script>
 
 <template>
     <div class="text-footer">
-        <p>Copyright 2024 Grease Monkey Swaps Inc. All Rights Reserved <span class="span-text"> <a href="#" class="text-link">Accessibility User
-        Agreement Privacy, Payments Terms of Use, Cookies, CA Privacy Notice Your Privacy Choices </a> </span></p>
+        <p>Copyright 2024 Rifas Vip Bailadores. Todos los derechos reservados. <br> Desarrollado por <Link href="/test">Tobal Systems, C.A.</Link></p>
     </div>
 </template>
 

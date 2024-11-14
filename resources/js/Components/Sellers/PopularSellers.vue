@@ -64,7 +64,7 @@ import Seller from "@/Components/Sellers/Seller.vue";
 </template>
 <style scoped>
 .container-principal {
-    background: #EEEEC8;
+    background: white;
 }
 
 .popular-sellers-section {

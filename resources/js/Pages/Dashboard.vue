@@ -13,15 +13,24 @@ import NavbarPrincipal from "@/Components/Navbar/NavbarPrincipal.vue";
 </script>
 
 <template>
-    <!--Styles and temporal structure-->
-    <div style="background-color: #EEEEC8; width: 100%; height: 700px">
+    <Head title="Tablero" />
 
-        <Head title="Dashboard" />
+    <NavbarPrincipal/>
 
-        <NavbarPrincipal/>
+<!--    <Categories/>-->
 
-        <h1 style="padding-top: 180px">Dashboard</h1>
+<!--    <PopularSellers/>-->
 
-        <Menu/>
-    </div>
+<!--    <Vehicles/>-->
+
+<!--    <Products/>-->
+
+<!--    <PopularBuyers/>-->
+
+<!--    <ProductTrending/>-->
+
+<!--    <Score/>-->
+
+<!--    <Menu/>-->
+
 </template>

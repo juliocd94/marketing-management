@@ -81,7 +81,7 @@ import Filter from "@/Components/Filters/Filter.vue";
 
 <style>
 .container-principal{
-    background: #EEEEC8;
+    background: white;
 }
 .banner {
     margin-top: 112px;
@@ -106,7 +106,7 @@ import Filter from "@/Components/Filters/Filter.vue";
 }
 
 .search {
-    background-color:  #F2F2D6;
+    background-color:  white;
     width: 100%;
     height: 54px;
     padding-left: 48px;

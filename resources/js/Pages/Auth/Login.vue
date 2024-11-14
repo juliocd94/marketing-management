@@ -1,10 +1,8 @@
 <script setup>
 import InputError from "@/Components/InputError.vue";
-import PrimaryButton from "@/Components/PrimaryButton.vue";
 import {Head, Link, useForm} from "@inertiajs/vue3";
-import Navbar from "@/Components/Navbar/Navbar.vue";
 import FooterAuth from "@/Components/FooterAuth.vue";
-import Checkbox from "@/Components/Checkbox.vue";
+import { MDBInput, MDBBtn } from 'mdb-vue-ui-kit';
 
 defineProps({
     canResetPassword: {
@@ -37,8 +35,6 @@ const submit = () => {
 
         <Head title="Log in"/>
 
-        <Navbar/>
-
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
         </div>
@@ -51,11 +47,11 @@ const submit = () => {
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                         <div class="text-center">
-                            <h3 class="title-login">HELLO</h3>
+                            <h3 class="title-login">Bienvenido</h3>
                             <div class="top-text">
-                                <p>Sign in to Grease Monkey Swaps or...</p>
+                                <p>Inicia sesión en el portal administrativo de RVB o...</p>
                                 <Link class="top-text-link" href="/register"
-                                >Create An Account
+                                >Cree una cuenta
                                 </Link
                                 >
                             </div>
@@ -63,15 +59,14 @@ const submit = () => {
                         <div class="mt-4">
                             <form @submit.prevent="submit">
                                 <div class="container-inputs">
-                                    <input
-                                        class="custom-input"
-                                        autocomplete="username"
-                                        placeholder="Email or username"
-                                        v-model="form.email"
-                                        id="email"
+
+                                    <MDBInput
+                                        label="Correo electrónico"
                                         type="email"
+                                        v-model="form.email"
+                                        autocomplete="username"
+                                        wrapperClass="mb-4"
                                         required
-                                        autofocus
                                     />
 
                                     <InputError
@@ -81,15 +76,12 @@ const submit = () => {
                                 </div>
 
                                 <div class="container-inputs">
-                                    <input
-                                        class="custom-input"
-                                        placeholder="Enter your password"
-                                        v-model="form.password"
-                                        id="password"
-                                        autocomplete="password"
+                                    <MDBInput
+                                        label="Contraseña"
                                         type="password"
+                                        v-model="form.password"
+                                        wrapperClass="mb-4"
                                         required
-                                        autofocus
                                     />
 
                                     <InputError
@@ -101,7 +93,7 @@ const submit = () => {
                                         <Link
                                             v-if="canResetPassword"
                                             :href="route('password.request')"
-                                            class="no-default-link"
+                                            class=""
                                         >
                                             Forgot Password?
                                         </Link>
@@ -109,37 +101,9 @@ const submit = () => {
                                 </div>
 
                                 <div class="mt-4">
-                                    <PrimaryButton
-                                        class="button-submit"
-                                    >
-                                        LOGIN
-                                    </PrimaryButton>
-
-                                    <div class="divider">
-                                        <span class="divider-text">Or</span>
-                                    </div>
-
-                                    <Link href="#" class="btn mt-4 session-social">
-                                        CONTINUE WITH FACEBOOK
-                                    </Link>
-
-                                    <Link href="#" class="btn mt-3 session-social">
-                                        CONTINUE WITH GOOGLE
-                                    </Link>
+                                    <MDBBtn type="submit" color="primary" block> Sign in </MDBBtn>
                                 </div>
                             </form>
-                        </div>
-                        <div class="midd-text">
-                            <p>
-                                <Checkbox />
-                                Stay signed in
-                            </p>
-                            <p>Using a public or shared device? Uncheck to</p>
-                            <p>protect your account</p>
-                            <Link href="test" class="midd-text-link"
-                            >Learn more
-                            </Link
-                            >
                         </div>
                         <div class="container-footer">
                             <FooterAuth/>
@@ -153,11 +117,9 @@ const submit = () => {
 
 <style scoped>
 .container-principal {
-    background: #EEEEC8;
 }
 
 .general-container {
-    background-color: #EEEEC8;
 }
 
 .title-login {
@@ -184,99 +146,15 @@ const submit = () => {
 }
 
 .top-text-link {
-    color: #cb333b;
+    color: #3B71CA;
 }
 
 .content-container {
-    margin-top: 112px;
-}
-
-.midd-text {
-    margin-top: 45px;
-    text-align: center;
-    font-family: Poppins, serif;
-    font-size: 14px;
-    line-height: 20.72px;
-    font-weight: 500;
-}
-
-.midd-text p {
-    margin: 0;
-}
-
-.midd-text-link {
-    color: #cb333b;
-}
-
-.session-social {
-    background-color: transparent;
-    width: 100%;
-    height: 48px;
-    padding: 12px 16px 12px 16px;
-    border-radius: 96px;
-    border: 1px solid #cb333b;
-    font-family: Poppins, serif;
-    font-size: 16px;
-    font-style: italic;
-    font-weight: 700;
-    line-height: 23.68px;
-    text-align: center;
-    color: #232222;
-}
-
-.session-social:hover {
-    border: 1px solid #cb333b;
 }
 
 .no-default-link {
     color: #202222;
     text-decoration: none;
-}
-
-.button-submit {
-    width: 100%;
-    height: 48px;
-    padding: 12px 16px 12px 16px;
-    border: none;
-    border-radius: 96px;
-    background: #cb333b;
-    color: #f2f1f0;
-    font-style: italic;
-    font-family: Poppins, serif;
-    font-size: 16px;
-    font-weight: 800;
-    line-height: 23.68px;
-    text-align: center;
-}
-
-.custom-input {
-    border: 1px solid #202222;
-    background-color: #F2F2D6;
-    height: 54px;
-    padding: 16px;
-    border-radius: 64px;
-    width: 100%;
-    margin-top: 18px;
-}
-
-.divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 1rem 0;
-}
-
-.divider::before,
-.divider::after {
-    content: "";
-    flex: 1;
-    border-top: 1px solid #202222;
-}
-
-.divider-text {
-    margin: 0 1rem;
-    color: #202222;
-    font-weight: bold;
 }
 
 .container-footer {
@@ -285,8 +163,6 @@ const submit = () => {
 
 @media (max-width: 768px) {
     .content-container {
-        background: #eeeec8;
-        margin-top: 70px;
     }
 
     .title-login {
@@ -296,40 +172,13 @@ const submit = () => {
     }
 
     .general-container {
-        background-color: #EEEEC8;
         padding-left: 5%;
         padding-right: 5%;
         margin: auto;
     }
 
-    .custom-input {
-        margin-top: 7px;
-        height: 54px;
-    }
-
     .top-text {
         margin: 0;
-    }
-
-    .midd-text {
-        margin-top: 28px;
-        text-align: center;
-        font-family: Poppins, serif;
-        font-size: 13px;
-        line-height: 19.24px;
-    }
-
-    .button-submit {
-        font-size: 15px;
-        font-weight: 700;
-        line-height: 22.2px;
-        height: 46px;
-    }
-
-    .session-social {
-        font-size: 15px;
-        font-weight: 700;
-        line-height: 22.2px;
     }
 
     .container-footer {

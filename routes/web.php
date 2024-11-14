@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
-    return redirect(route('marketplace'));
+    return redirect(route('dashboard'));
 });
 
 Route::get('/marketplace', function () {
